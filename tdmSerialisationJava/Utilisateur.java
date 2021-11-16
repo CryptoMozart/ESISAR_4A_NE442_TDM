@@ -9,6 +9,15 @@ public class Utilisateur extends JFrame
 {
 	private static final long	serialVersionUID	= 834729251135193369L;
 	private Automate			automate			= null;
+
+	public Automate getAutomate(){
+		return this.automate;
+	}
+
+	public void setAutomate(Automate a){
+		this.automate.equals(a);
+	}
+
 	public void consulter()
 	{
 		try

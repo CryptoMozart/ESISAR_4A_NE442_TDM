@@ -1,5 +1,6 @@
 import javax.swing.JFrame;
 
+import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 import java.io.*;
 
@@ -45,7 +46,8 @@ public class Administrateur extends JFrame
 	 * @throws ClassNotFoundException
 	 * @throws IOException
 	 */
-	private void deserialiserBanque()throws IOException,ClassNotFoundException{
+
+	/*private void deserialiserBanque()throws IOException,ClassNotFoundException{
 		FileInputStream inFile = new FileInputStream("banqueData.temp");
 
 		ObjectInputStream entree = new ObjectInputStream(inFile);
@@ -58,10 +60,31 @@ public class Administrateur extends JFrame
 		entree.close();
 		inFile.close();
 
+	}*/
+
+	private void deserialiserBanque() throws IOException,ClassNotFoundException{
+		XMLDecoder decoder = null;
+        try{
+            decoder = new XMLDecoder(new FileInputStream("banqueData.xml"));
+            Banque banque = (Banque) decoder.readObject();
+
+			this.banque = banque;
+			this.automate.setBanque(banque);
+            decoder.close();
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+        finally{
+            if(decoder != null){
+                decoder.close();
+            }
+        }
 	}
 
 	private Banque				banque				= null;
 	private Automate			automate			= null;
+
 
 	private javax.swing.JPanel	jContentPane		= null;
 	private JButton				boutonSerialiser	= null;

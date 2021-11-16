@@ -7,7 +7,14 @@ public class Banque implements Serializable
 {
 	private String			nom		= null;
 	private static Banque	banque	= null;
-	private Vector<Compte>	comptes	= null;
+	public Vector<Compte>	comptes	= null;
+
+	public String getNom(){
+		return this.nom;
+	}
+	public void setNom(String nom){
+		this.nom = nom;
+	}
 
 	// Constructeur sans arguments
 	// N�cessaire pour la s�rialisation XML

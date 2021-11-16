@@ -9,6 +9,39 @@ public class Compte implements Serializable
 	private Date	d_ouverture	= null;
 	private int		solde		= 0;
 
+
+	public String getClient(){
+		return client;
+	}
+
+	public Date getDouverture(){
+		return this.d_ouverture;
+	}
+
+	public int getSolde(){
+		return this.solde;
+	}
+
+	public int getCode(){
+		return this.code;
+	}
+
+	public void setClient(String c){
+		this.client = c;
+	}
+
+	public void setDouverture(Date d){
+		this.d_ouverture = d;
+	}
+
+	public void setSolde(int s){
+		this.solde = s;
+	}
+
+	public void setCode(int c){
+		this.code = c;
+	}
+
 	public Compte()
 	{}
 
@@ -17,16 +50,6 @@ public class Compte implements Serializable
 		this.code = code;
 		this.client = client;
 		this.d_ouverture = Calendar.getInstance().getTime();
-	}
-
-	/**
-	 * Consulter le compte
-	 * 
-	 * @return
-	 */
-	public int getCode()
-	{
-		return this.code;
 	}
 
 	/**

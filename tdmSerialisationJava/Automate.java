@@ -3,6 +3,10 @@ public class Automate
 	private static Automate	automate	= null;
 	private Banque			banque		= null;
 
+	public Banque getBanque(){
+		return this.banque;
+	}
+
 	Automate(Banque banque)
 	{
 		this.banque = banque;
