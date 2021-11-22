@@ -5,9 +5,10 @@ import java.util.Vector;
 
 public class Banque implements Serializable
 {
+	private static final long serialVersionUID = 1L;
 	private String			nom		= null;
 	private static Banque	banque	= null;
-	public Vector<Compte>	comptes	= null;
+	private Vector<Compte>	comptes	= null;
 
 	public String getNom(){
 		return this.nom;
@@ -15,7 +16,13 @@ public class Banque implements Serializable
 	public void setNom(String nom){
 		this.nom = nom;
 	}
-
+	
+	public Vector<Compte> getComptes() {
+		return comptes;
+	}
+	public void setComptes(Vector<Compte> comptes) {
+		this.comptes = comptes;
+	}
 	// Constructeur sans arguments
 	// N�cessaire pour la s�rialisation XML
 	public Banque()
